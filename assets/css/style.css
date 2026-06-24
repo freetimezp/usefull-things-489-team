@@ -9,3 +9,165 @@
 a {
     text-decoration: none;
 }
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #141414;
+}
+
+.team {
+    padding: 50px 0;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+}
+
+.row:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.row h1 {
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.row p {
+    margin-top: 20px;
+    color: #fff;
+    padding-left: 20px;
+    border-left: 5px solid #f00;
+}
+
+.row .column {
+    position: relative;
+    margin: 0 10px;
+
+    width: 22%;
+    max-height: 450px;
+
+    background: #fff;
+
+    overflow: hidden;
+}
+
+.row .column::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 0, 0, 1);
+    z-index: 1;
+
+    mix-blend-mode: soft-light;
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+.row .column::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 0, 0, 0.2);
+    z-index: 1;
+
+    mix-blend-mode: soft-light;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+
+.row .column:hover::before {
+    bottom: 0;
+}
+
+.row .column:hover::after {
+    top: 0;
+}
+
+.imgBox {
+    position: relative;
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    transition: 5s;
+}
+
+.column:hover .imgBox img {
+    transform: scale(1.5);
+}
+
+.column .details {
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    padding: 10px;
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.column:hover .details {
+    bottom: 0;
+}
+
+.details h3 {
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.details h3 span {
+    position: relative;
+    top: -6px;
+
+    font-size: 14px;
+    color: #f00;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.details ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.details ul li a {
+    color: #fff;
+    padding: 0 10px;
+}
+
+.details ul li a .fa-brands {
+    font-size: 18px;
+    transition: 0.5s;
+}
+.details ul li:hover a .fa-brands {
+    transform: rotateY(360deg);
+    color: #f00;
+}
